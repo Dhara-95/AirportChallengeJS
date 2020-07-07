@@ -1,9 +1,12 @@
 class Airport {
+
   constructor() {
     this.hangar = []
+    const FULLCAPACITY = 1
   }
 
   dock(plane) {
+    if (this.isFull) throw("Hangar is full")
     this.hangar.push(plane);
   }
 
@@ -15,5 +18,9 @@ class Airport {
     else if (this.hangar.includes(plane)) {
       return "Take-off unsuccesful";
     }
+  }
+
+  isFull() {
+    this.hangar.length >=  FULLCAPACITY;
   }
 }

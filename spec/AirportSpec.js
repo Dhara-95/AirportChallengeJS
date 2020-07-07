@@ -1,4 +1,7 @@
 describe('Airport', function() {
+  
+  var airport;
+  var plane;
 
   beforeEach(function() {
     airport = new Airport();
@@ -17,6 +20,13 @@ describe('Airport', function() {
       airport.dock(plane);
       airport.takeOff(plane);
       expect(airport.takeOff(plane)).toEqual("Plane has taken off succesfully");
+    });
+  });
+
+  describe('checking for full capacity', function() {
+    it('will not dock if capacity is full', function() {
+      airport.dock(plane);
+      expect(airport.dock(plane)).toThrow(new Error("Hangar is full"));
     });
   });
 });
