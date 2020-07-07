@@ -8,12 +8,11 @@ class Airport {
   }
 
   takeOff(plane) {
-    var hangarLength = hangar.length();
     this.hangar.pop();
-    if (this.hangar.length() < hangarLength) {
+    if (!this.hangar.includes(plane)) {
       return "Plane has taken off succesfully";
     }
-    else {
+    else if (this.hangar.includes(plane)) {
       return "Take-off unsuccesful";
     }
   }

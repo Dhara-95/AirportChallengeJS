@@ -15,7 +15,8 @@ describe('Airport', function() {
   describe('Airport can tell a plane to takeoff', function () {
     it('Will get a plane to leave the hangar array', function () {
       airport.dock(plane);
-      expect(airport.takeOff(plane)).toEqual("Plane has taken off succesfully")
+      airport.takeOff(plane);
+      expect(airport.takeOff(plane)).toEqual("Plane has taken off succesfully");
     });
   });
 });
