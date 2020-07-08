@@ -24,9 +24,10 @@ describe('Airport', function() {
   });
 
   describe('checking for full capacity', function() {
-    it('will not dock if capacity is full', function() {
+    it('will not dock if capacity is full', 
+  function() {
       airport.dock(plane);
-      expect(airport.dock(plane)).toThrow(new Error("Hangar is full"));
+      expect(function() {airport.dock(plane);}).toThrow(Error("Hangar is full"))
     });
   });
 });
